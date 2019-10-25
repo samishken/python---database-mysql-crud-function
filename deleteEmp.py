@@ -1,11 +1,11 @@
 import mysql.connector;
 
 def delete(id):
-    conn = mysql.connector.connect(host='localhost',database='samboo',user='root',password='xxxxxxxx')
+    conn = mysql.connector.connect(host='localhost',database='mydb2',user='testuser',password='xxxxxxxx')
 
     if conn.is_connected():
         print("Connected to mysql db")
-        cursor = con.cursor()
+        cursor = conn.cursor()
         str = "delete from emp where id='%d'"
         args=(id)
         try:
@@ -18,5 +18,5 @@ def delete(id):
             cursor.close()
             conn.close()
 
-    empId = int(input('Enter Emp Id:'))
-    delete(empId)
+    stuId = int(input('Enter STU Id:'))
+    delete(stuId)
